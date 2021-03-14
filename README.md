@@ -1,18 +1,19 @@
-ER図：https://gyazo.com/1baf5ac3c3af0172775bbe9e79553540
+
 
 # テーブル設計
 
 ## users テーブル
 
-| Column         | Type   | Options                   |
-| -------------- | ------ | ------------------------- |
-| nickname       | string | null: false               |
-| email          | string | null: false, unique: true |
-| last_name      | string | null: false               |
-| last_name_ruby | string | null: false               |
-| first_name     | string | null: false               |
-| first_name_ruby| string | null: false               |
-| birthday       | date   | null: false               |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| last_name          | string | null: false               |
+| last_name_ruby     | string | null: false               |
+| first_name         | string | null: false               |
+| first_name_ruby    | string | null: false               |
+| birthday           | date   | null: false               |
 
 ### Association
 
@@ -33,7 +34,7 @@ ER図：https://gyazo.com/1baf5ac3c3af0172775bbe9e79553540
 | prefecture_id     | integer   | null: false       |
 | delivery_day_id   | integer   | null: false       |
 | price             | integer   | null: false       |
-| user_id           | reference | foreign_key: true |
+| user              | reference | foreign_key: true |
 
 ### Association
 
@@ -64,10 +65,11 @@ ER図：https://gyazo.com/1baf5ac3c3af0172775bbe9e79553540
 
 | Column     | Type        | Options           |
 | ---------- | ----------- | ----------------- |
-| user_id    | reference   | foreign_key: true |
-| product_id | reference   | foreign_key: true |
+| user       | reference   | foreign_key: true |
+| product    | reference   | foreign_key: true |
 
 ### Association
 
 - belongs_to :user
+- has_one :address
 - belongs_to :product

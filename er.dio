@@ -1,31 +1,31 @@
 <mxfile>
     <diagram id="ELhE7Vuq-jE0Zk4NY9Ol" name="ページ1">
-        <mxGraphModel dx="685" dy="1118" grid="0" gridSize="14" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="395" dy="1335" grid="0" gridSize="14" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="72" value="users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=1;dashed=0;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="400" y="-141" width="160" height="112" as="geometry"/>
+                    <mxGeometry x="400" y="-162" width="160" height="153" as="geometry"/>
                 </mxCell>
-                <mxCell id="73" value="nickname&#10;email&#10;last-name&#10;first-name&#10;birthday" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="72">
-                    <mxGeometry y="30" width="160" height="82" as="geometry"/>
+                <mxCell id="73" value="nickname&#10;email&#10;encrypted_password&#10;last_name&#10;last_name_ruby&#10;first_name&#10;first_name_ruby&#10;birthday" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="72">
+                    <mxGeometry y="30" width="160" height="123" as="geometry"/>
                 </mxCell>
                 <mxCell id="76" value="products" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=1;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="56" y="-150" width="160" height="170" as="geometry"/>
                 </mxCell>
-                <mxCell id="77" value="name&#10;description&#10;category_id&#10;starus_id&#10;delivery-fee_id&#10;delivery-area_id&#10;delivery-day_id&#10;price&#10;user_id" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="76">
+                <mxCell id="77" value="name&#10;description&#10;category_id&#10;starus_id&#10;delivery-fee_id&#10;delivery-area_id&#10;delivery-day_id&#10;price&#10;user" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="76">
                     <mxGeometry y="30" width="160" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="84" value="addresses" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="400" y="225" width="160" height="144" as="geometry"/>
                 </mxCell>
-                <mxCell id="85" value="postcode&#10;prefecture_id&#10;municipality&#10;address&#10;buildingname&#10;phonenumber&#10;record_id" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="84">
+                <mxCell id="85" value="postcode&#10;prefecture_id&#10;municipality&#10;address&#10;buildingname&#10;phonenumber&#10;record" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="84">
                     <mxGeometry y="30" width="160" height="114" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="records" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="400" y="60" width="160" height="76" as="geometry"/>
                 </mxCell>
-                <mxCell id="87" value="user_id&#10;product_id" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="86">
+                <mxCell id="87" value="user&#10;product" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="86">
                     <mxGeometry y="30" width="160" height="46" as="geometry"/>
                 </mxCell>
                 <mxCell id="104" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=1;startArrow=ERmany;startFill=0;startSize=13;endArrow=ERone;endFill=0;endSize=13;targetPerimeterSpacing=0;strokeColor=#f0f0f0;strokeWidth=2;" edge="1" parent="1" source="77" target="72">
