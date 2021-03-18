@@ -7,10 +7,6 @@ class Product < ApplicationRecord
     belongs_to :user
     has_one_attached :image
 
-    # validates :category_id, numericality: { other_than: 1 }
-    # validates :status_id, numericality: { other_than: 1 } 
-    # validates :delivery_fee_id, numericality: { other_than: 1 } 
-    # validates :delivery_day_id, numericality: { other_than: 1 } 
     with_options numericality: { other_than: 1 } do
         validates :category_id
         validates :status_id
@@ -18,4 +14,12 @@ class Product < ApplicationRecord
         validates :prefecture_id
         validates :delivery_day_id
     end
+
+    with_options presence: true do
+        validates :name
+        validates :description
+        validates :image
+    end
+    
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 end
