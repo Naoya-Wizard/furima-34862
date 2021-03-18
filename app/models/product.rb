@@ -7,7 +7,7 @@ class Product < ApplicationRecord
     belongs_to :user
     has_one_attached :image
 
-    with_options numericality: { other_than: 1 } do
+    with_options numericality: { other_than: 1, message: 'Select'} do
         validates :category_id
         validates :status_id
         validates :delivery_fee_id
@@ -19,7 +19,9 @@ class Product < ApplicationRecord
         validates :name
         validates :description
         validates :image
+        validates :price
     end
     
-    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+    validates :price, numericality: { only_integer: true, message: 'Half-width number' }
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: 'Out of setting range' }
 end
