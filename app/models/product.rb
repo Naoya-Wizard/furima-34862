@@ -4,6 +4,7 @@ class Product < ApplicationRecord
     belongs_to :status
     belongs_to :delivery_fee
     belongs_to :delivery_day
+    belongs_to :prefecture
     belongs_to :user
     has_one_attached :image
 
