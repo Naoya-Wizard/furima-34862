@@ -96,6 +96,31 @@ RSpec.describe Product, type: :model do
         @product.valid?
         expect(@product.errors.full_messages).to include("Price Out of setting range")
       end
+      it 'category_idが2以上でなければ登録できない' do
+        @product.category_id = 1
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Category Select")
+      end
+      it 'status_idが2以上でなければ登録できない' do
+        @product.status_id = 1
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Status Select")
+      end
+      it 'delivery_fee_idが2以上でなければ登録できない' do
+        @product.delivery_fee_id = 1
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Delivery fee Select")
+      end
+      it 'prefecture_idが2以上でなければ登録できない' do
+        @product.prefecture_id = 1
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Prefecture Select")
+      end
+      it 'delivery_day_idが2以上でなければ登録できない' do
+        @product.delivery_day_id = 1
+        @product.valid?
+        expect(@product.errors.full_messages).to include("Delivery day Select")
+      end
     end
   end
 
