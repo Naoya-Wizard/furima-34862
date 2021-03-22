@@ -10,7 +10,7 @@ class RecordAddress
         validates :address
         validates :phonenumber
     end
-    validates :prefecture, numericality: numericality: { other_than: 1, message: 'Select'}
+    validates :prefecture, numericality: { other_than: 1, message: 'Select'}
 
 
     def save
