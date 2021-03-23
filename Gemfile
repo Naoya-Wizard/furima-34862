@@ -73,3 +73,4 @@ gem 'active_hash'
 
 gem 'faker'
 
+gem 'payjp'

@@ -8,6 +8,7 @@ function price(){
     AddTaxPrice.innerHTML = `${price_fee}`;
     const Profit = document.getElementById("profit");
     Profit.innerHTML = `${price_profit}`;
-  });}
+  });
+};
 
-  window.addEventListener('load', price);
+window.addEventListener('load', price);
