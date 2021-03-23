@@ -4,7 +4,7 @@ class RecordAddress
 
     with_options presence: true do
         validates :user_id
-        validates :pruduct_id
+        validates :product_id
         validates :postcode, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "Input correctly"}
         validates :municipality
         validates :address
