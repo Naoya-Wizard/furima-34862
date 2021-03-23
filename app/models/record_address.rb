@@ -12,7 +12,7 @@ class RecordAddress
     end
 
     validates :prefecture_id, numericality: { other_than: 1, message: 'Select'}
-    validates :phonenumber, numericality: {message: 'Input only number'}
+    validates :phonenumber, numericality: { message: 'Input only number' }
 
     def save
         record = Record.create(user_id: user_id, product_id: product_id)
