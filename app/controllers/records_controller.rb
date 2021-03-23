@@ -3,11 +3,17 @@ class RecordsController < ApplicationController
     def index
         @product = Product.find(params[:product_id])
         @record_address = RecordAddress.new
-        # binding.pry
     end
 
     def create
-        binding.pry
+        @product = Product.find(params[:product_id])
+        @record_address = RecordAddress.new(record_params)
+        if @record_address.valid?
+            @record_address.save
+            redirect_to root_path
+        else
+            render :index
+        end
     end
 
     private
