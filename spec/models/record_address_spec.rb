@@ -8,6 +8,7 @@ RSpec.describe RecordAddress, type: :model do
       @record_address = FactoryBot.build(:record_address, user_id: user.id, product_id: product.id)
       sleep 0.2
     end
+    context '登録できる場合' do
       it '全ての情報が正しく入力されていると登録できる' do
         expect(@record_address).to be_valid
       end
@@ -15,6 +16,9 @@ RSpec.describe RecordAddress, type: :model do
         @record_address.buildingname = ""
         expect(@record_address).to be_valid
       end
+    end
+
+    context '登録できない場合' do
       it 'postcodeが空では登録できない' do
         @record_address.postcode = ""
         @record_address.valid?
@@ -80,5 +84,6 @@ RSpec.describe RecordAddress, type: :model do
         @record_address.valid?
         expect(@record_address.errors.full_messages).to include("Phonenumber out of range")
       end
+    end
   end
 end
