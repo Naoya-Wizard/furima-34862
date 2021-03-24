@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
     def index
         @product = Product.includes(:user).order("created_at DESC")
+        @record = Record.all
     end
 
     def new
@@ -21,6 +22,7 @@ class ProductsController < ApplicationController
     end
 
     def show
+        @record = Record.all
     end
 
     def edit
