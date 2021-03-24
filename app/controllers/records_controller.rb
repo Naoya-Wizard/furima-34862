@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
     before_action :authenticate_user!
-    before_action :move_to_index, only: :index
+    before_action :move_to_index
 
     def index
         @product = Product.find(params[:product_id])
@@ -35,7 +35,13 @@ class RecordsController < ApplicationController
 
      def move_to_index
         @product = Product.find(params[:product_id])
-        if current_user.id == @product.user.id
+        signal = true
+        Record.all.each do | record |
+            if record.product_id == @product.id
+                signal = false
+            end
+        end
+        unless (current_user.id != @product.user.id) && signal
             redirect_to root_path
         end
     end

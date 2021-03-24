@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
     def move_to_index
         signal = true
         Record.all.each do | record |
-           if @product.user.id == record.product_id
+           if @product.id == record.product_id
               signal = false
            end
         end
