@@ -35,13 +35,7 @@ class RecordsController < ApplicationController
 
      def move_to_index
         @product = Product.find(params[:product_id])
-        signal = true
-        Record.all.each do | record |
-            if record.product_id == @product.id
-                signal = false
-            end
-        end
-        unless (current_user.id != @product.user.id) && signal
+        if current_user.id == @product.user.id || @product.record.present?
             redirect_to root_path
         end
     end

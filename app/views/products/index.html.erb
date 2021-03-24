@@ -121,12 +121,10 @@
         <%= link_to product_path(product) do %>
         <div class='item-img-content'>
           <%= image_tag(product.image, class: :"item-img") %>
-          <% @record.each do | record | %>
-            <% if product.id == record.product_id %>
+          <% if product.record.present? %>
               <div class='sold-out'>
                 <span>Sold Out!!</span>
               </div> 
-            <% end %>
           <% end %>
         </div>
         <div class='item-info'>
