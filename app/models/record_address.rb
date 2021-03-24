@@ -9,6 +9,7 @@ class RecordAddress
         validates :municipality
         validates :address
         validates :phonenumber
+        validates :token
     end
 
     validates :prefecture_id, numericality: { other_than: 1, message: 'Select'}

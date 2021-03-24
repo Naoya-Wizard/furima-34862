@@ -3,7 +3,7 @@ const pay = () => {
       const form = document.getElementById("charge-form");
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-    
+        
         const formResult = document.getElementById("charge-form");
         const formData = new FormData(formResult);
     
@@ -28,6 +28,12 @@ const pay = () => {
   
             document.getElementById("charge-form").submit();
           }
+          document.getElementById("card-number").removeAttribute("name");
+          document.getElementById("card-cvc").removeAttribute("name");
+          document.getElementById("card-exp-month").removeAttribute("name");
+          document.getElementById("card-exp-year").removeAttribute("name"); 
+           
+          document.getElementById("charge-form").submit();
         });
       });
     };
