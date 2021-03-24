@@ -6,7 +6,7 @@ RSpec.describe RecordAddress, type: :model do
       user = FactoryBot.create(:user)
       product = FactoryBot.create(:product)
       @record_address = FactoryBot.build(:record_address, user_id: user.id, product_id: product.id)
-      sleep 0.1
+      sleep 0.2
     end
       it '全ての情報が正しく入力されていると登録できる' do
         expect(@record_address).to be_valid
@@ -74,6 +74,11 @@ RSpec.describe RecordAddress, type: :model do
         @record_address.token = ""
         @record_address.valid?
         expect(@record_address.errors.full_messages).to include("Token can't be blank")
+      end
+      it '電話番号は12桁以上では登録できない' do
+        @record_address.phonenumber = "123456789123"
+        @record_address.valid?
+        expect(@record_address.errors.full_messages).to include("Phonenumber out of range")
       end
   end
 end
