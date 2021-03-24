@@ -1,5 +1,7 @@
 class RecordsController < ApplicationController
-    
+    before_action :authenticate_user!
+    before_action :move_to_index, only: :index
+
     def index
         @product = Product.find(params[:product_id])
         @record_address = RecordAddress.new
@@ -21,6 +23,7 @@ class RecordsController < ApplicationController
     def record_params
         params.require(:record_address).permit(:postcode, :prefecture_id, :municipality, :address, :buildingname, :phonenumber).merge(user_id: current_user.id, product_id: params[:product_id], token: params[:token])
     end
+
     def pay_item
         Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
         Payjp::Charge.create(
@@ -29,5 +32,12 @@ class RecordsController < ApplicationController
           currency:'jpy'
         )
      end
+
+     def move_to_index
+        @product = Product.find(params[:product_id])
+        if current_user.id == @product.user.id
+            redirect_to root_path
+        end
+    end
 
 end
