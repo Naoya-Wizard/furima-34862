@@ -1,14 +1,14 @@
 class RecordsController < ApplicationController
     before_action :authenticate_user!
+    before_action :set_record
     before_action :move_to_index
+    
 
     def index
-        @product = Product.find(params[:product_id])
         @record_address = RecordAddress.new
     end
 
     def create
-        @product = Product.find(params[:product_id])
         @record_address = RecordAddress.new(record_params)
         if @record_address.valid?
             pay_item
@@ -34,10 +34,12 @@ class RecordsController < ApplicationController
      end
 
      def move_to_index
-        @product = Product.find(params[:product_id])
         if current_user.id == @product.user.id || @product.record.present?
             redirect_to root_path
         end
     end
 
+    def set_record
+        @product = Product.find(params[:product_id])
+    end
 end
