@@ -6,6 +6,7 @@ class Product < ApplicationRecord
     belongs_to :delivery_day
     belongs_to :prefecture
     belongs_to :user
+    has_one :record
     has_one_attached :image
 
     with_options numericality: { other_than: 1, message: 'Select'} do
