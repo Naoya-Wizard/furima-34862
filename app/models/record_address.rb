@@ -1,6 +1,6 @@
 class RecordAddress
     include ActiveModel::Model
-    attr_accessor :user_id, :product_id, :postcode, :prefecture_id, :municipality, :address, :buildingname, :phonenumber, :record_id, :token
+    attr_accessor :user_id, :product_id, :postcode, :prefecture_id, :municipality, :address, :buildingname, :phonenumber, :token
 
     with_options presence: true do
         validates :user_id
